@@ -2,10 +2,10 @@
 /*  1. Shebang – tells the OS to execute this file with Node.js.
     2. Makes the file an executable CLI tool on macOS/Linux when you run `chmod +x site-cloner.js` */
 
-const axios   = require("axios");      // 3. Promise-based HTTP client – fetches remote files.
+const axios = require("axios");      // 3. Promise-based HTTP client – fetches remote files.
 const cheerio = require("cheerio");    // 4. jQuery-like server-side HTML parser.
-const fs      = require("fs-extra");   // 5. fs + extra helpers (ensureDir, etc.).
-const path    = require("path");       // 6. Cross-platform path utilities.
+const fs = require("fs-extra");   // 5. fs + extra helpers (ensureDir, etc.).
+const path = require("path");       // 6. Cross-platform path utilities.
 const { Command } = require("commander"); // 7. CLI argument parser.
 
 /*  8. Instantiate Commander’s main command object */
@@ -23,7 +23,7 @@ program
     console.log(`🎯 Cloning: ${targetUrl}`);
 
     /* 10. Build absolute base URL – needed to resolve relative assets. */
-    const base     = new URL(targetUrl);
+    const base = new URL(targetUrl);
     /* 11. Resolve output path to absolute – avoids surprises when cd’ing around. */
     const outputDir = path.resolve(options.output);
     /* 12. Create folder tree synchronously (empty if already exists). */
